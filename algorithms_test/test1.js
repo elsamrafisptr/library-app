@@ -1,6 +1,7 @@
 function reverseStringWithNumberLoop(str) {
   let reversed = "";
   let number = "";
+
   for (let i = str.length - 1; i >= 0; i--) {
     if (isNaN(str[i])) {
       reversed += str[i];
@@ -11,6 +12,4 @@ function reverseStringWithNumberLoop(str) {
   return reversed + number;
 }
 
-const string = "NEGIE1";
-const result = reverseStringWithNumberLoop(string);
-console.log(result);
+console.log(reverseStringWithNumberLoop("NEGIE1"));
