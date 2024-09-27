@@ -1,18 +1,15 @@
-function longestWord(sentence) {
+function longestWordInSentence(sentence) {
   const words = sentence.split(" ");
-  let longest = "";
-  let maxLength = 0;
+  let longestWord = "";
 
-  words.forEach((word) => {
-    if (word.length > maxLength) {
-      longest = word;
-      maxLength = word.length;
+  for (let word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
     }
-  });
+  }
 
-  return longest;
+  return `${longestWord} (${longestWord.length} character)`;
 }
 
 const sentence = "Saya sangat senang mengerjakan soal algoritma";
-const longestWordInSentence = longestWord(sentence);
-console.log(longestWordInSentence);
+console.log(longest(sentence));
