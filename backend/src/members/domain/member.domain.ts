@@ -18,6 +18,8 @@ export class Member {
   @ApiProperty({ example: 'John Marston', type: String })
   name: string;
 
+  password?: string;
+
   @ApiProperty({ type: String })
   phone_number: string | null;
 
