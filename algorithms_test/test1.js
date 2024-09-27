@@ -12,4 +12,6 @@ function reverseStringWithNumberLoop(str) {
   return reversed + number;
 }
 
-console.log(reverseStringWithNumberLoop("NEGIE1"));
+const string = "NEGIE1";
+const result = reverseStringWithNumberLoop(string);
+console.log(result);
