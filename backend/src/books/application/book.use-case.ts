@@ -95,7 +95,7 @@ export class BookUseCase {
       throw new NotFoundException('Member not found');
     }
 
-    if (member.penalty?.status === true) {
+    if (member.penalty?.status === true || member.penaltyId !== null) {
       throw new ForbiddenException('Member is currently penalized.');
     }
 

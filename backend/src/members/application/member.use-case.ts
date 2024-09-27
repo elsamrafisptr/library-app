@@ -3,7 +3,7 @@ import {
   NotFoundException,
   BadRequestException,
 } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../../prisma/prisma.service';
 import { Member } from '../domain/member.domain';
 import { CreateMemberDto, UpdateMemberDto } from './member.dto';
 import { hash } from 'bcryptjs';
