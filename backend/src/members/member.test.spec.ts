@@ -4,6 +4,7 @@ import { NotFoundException, BadRequestException } from '@nestjs/common';
 import { MemberUseCase } from './application/member.use-case';
 import { Member } from './domain/member.domain';
 import { CreateMemberDto, UpdateMemberDto } from './application/member.dto';
+import { hash } from 'bcryptjs';
 
 describe('MemberUseCase Unit Testing', () => {
   let membersService: MemberUseCase;
@@ -179,11 +180,11 @@ describe('MemberUseCase Unit Testing', () => {
       };
       jest.spyOn(prisma.member, 'findUnique').mockResolvedValue({
         ...member,
-        password: 'rahasia123',
+        password: hash('rahasia123', 12) as unknown as string,
       });
       jest.spyOn(prisma.member, 'delete').mockResolvedValue({
         ...member,
-        password: 'rahasia123',
+        password: hash('rahasia123', 12) as unknown as string,
       });
 
       const result = await membersService.deleteMember('1');

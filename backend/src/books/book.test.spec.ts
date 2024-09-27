@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import { CreateBookDto, UpdateBookDto } from './application/book.dto';
 import { Member } from '@prisma/client';
+import { hash } from 'bcryptjs';
 
 describe('BooksController', () => {
   let booksService: BookUseCase;
@@ -212,7 +213,7 @@ describe('BooksController', () => {
       penaltyId: null,
       current_borrowed_books: 0,
       is_active: true,
-      password: 'rahasia',
+      password: hash('rahasia123', 12) as unknown as string,
     };
 
     it('should borrow book successfully when all conditions are met', async () => {
